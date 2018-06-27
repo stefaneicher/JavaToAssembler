@@ -1,0 +1,177 @@
+/usr/bin/env bash /Users/taaeist1/IdeaProjects/untitled/showAssembler.sh
+java version "1.8.0_162"
+Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
+Java HotSpot(TM) 64-Bit Server VM warning: PrintAssembly is enabled; turning on DebugNonSafepoints to gain additional output
+     89    1       3       eicher.jit.FloatMult::mult (4 bytes)
+Loaded disassembler from /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/server/hsdis-amd64.dylib
+Decoding compiled method 0x0000000111d89a90:
+Code:
+[Disassembling for mach='i386:x86-64']
+[Entry Point]
+[Verified Entry Point]
+[Constants]
+  # {method} {0x000000010e74b3b8} 'mult' '(FF)F' in 'eicher/jit/FloatMult'
+  # parm0:    xmm0      = float
+  # parm1:    xmm1      = float
+  #           [sp+0x40]  (sp of caller)
+  0x0000000111d89be0: mov    %eax,-0x14000(%rsp)
+  0x0000000111d89be7: push   %rbp
+  0x0000000111d89be8: sub    $0x30,%rsp
+  0x0000000111d89bec: movabs $0x10e74b520,%rsi  ;   {metadata(method data for {method} {0x000000010e74b3b8} 'mult' '(FF)F' in 'eicher/jit/FloatMult')}
+  0x0000000111d89bf6: mov    0xdc(%rsi),%edi
+  0x0000000111d89bfc: add    $0x8,%edi
+  0x0000000111d89bff: mov    %edi,0xdc(%rsi)
+  0x0000000111d89c05: movabs $0x10e74b3b8,%rsi  ;   {metadata({method} {0x000000010e74b3b8} 'mult' '(FF)F' in 'eicher/jit/FloatMult')}
+  0x0000000111d89c0f: and    $0x1ff8,%edi
+  0x0000000111d89c15: cmp    $0x0,%edi
+  0x0000000111d89c18: je     0x0000000111d89c2e  ;*fload_0
+                                                ; - eicher.jit.FloatMult::mult@0 (line 17)
+
+  0x0000000111d89c1e: vmulss %xmm1,%xmm0,%xmm0
+  0x0000000111d89c22: add    $0x30,%rsp
+  0x0000000111d89c26: pop    %rbp
+  0x0000000111d89c27: test   %eax,-0x73b0b2d(%rip)        # 0x000000010a9d9100
+                                                ;   {poll_return}
+  0x0000000111d89c2d: retq
+  0x0000000111d89c2e: mov    %rsi,0x8(%rsp)
+  0x0000000111d89c33: movq   $0xffffffffffffffff,(%rsp)
+  0x0000000111d89c3b: callq  0x0000000111d872e0  ; OopMap{off=96}
+                                                ;*synchronization entry
+                                                ; - eicher.jit.FloatMult::mult@-1 (line 17)
+                                                ;   {runtime_call}
+  0x0000000111d89c40: jmp    0x0000000111d89c1e
+  0x0000000111d89c42: nop
+  0x0000000111d89c43: nop
+  0x0000000111d89c44: mov    0x2a8(%r15),%rax
+  0x0000000111d89c4b: movabs $0x0,%r10
+  0x0000000111d89c55: mov    %r10,0x2a8(%r15)
+  0x0000000111d89c5c: movabs $0x0,%r10
+  0x0000000111d89c66: mov    %r10,0x2b0(%r15)
+  0x0000000111d89c6d: add    $0x30,%rsp
+  0x0000000111d89c71: pop    %rbp
+  0x0000000111d89c72: jmpq   0x0000000111cf56e0  ;   {runtime_call}
+  0x0000000111d89c77: hlt
+  0x0000000111d89c78: hlt
+  0x0000000111d89c79: hlt
+  0x0000000111d89c7a: hlt
+  0x0000000111d89c7b: hlt
+  0x0000000111d89c7c: hlt
+  0x0000000111d89c7d: hlt
+  0x0000000111d89c7e: hlt
+  0x0000000111d89c7f: hlt
+[Exception Handler]
+[Stub Code]
+  0x0000000111d89c80: callq  0x0000000111d84b20  ;   {no_reloc}
+  0x0000000111d89c85: mov    %rsp,-0x28(%rsp)
+  0x0000000111d89c8a: sub    $0x80,%rsp
+  0x0000000111d89c91: mov    %rax,0x78(%rsp)
+  0x0000000111d89c96: mov    %rcx,0x70(%rsp)
+  0x0000000111d89c9b: mov    %rdx,0x68(%rsp)
+  0x0000000111d89ca0: mov    %rbx,0x60(%rsp)
+  0x0000000111d89ca5: mov    %rbp,0x50(%rsp)
+  0x0000000111d89caa: mov    %rsi,0x48(%rsp)
+  0x0000000111d89caf: mov    %rdi,0x40(%rsp)
+  0x0000000111d89cb4: mov    %r8,0x38(%rsp)
+  0x0000000111d89cb9: mov    %r9,0x30(%rsp)
+  0x0000000111d89cbe: mov    %r10,0x28(%rsp)
+  0x0000000111d89cc3: mov    %r11,0x20(%rsp)
+  0x0000000111d89cc8: mov    %r12,0x18(%rsp)
+  0x0000000111d89ccd: mov    %r13,0x10(%rsp)
+  0x0000000111d89cd2: mov    %r14,0x8(%rsp)
+  0x0000000111d89cd7: mov    %r15,(%rsp)
+  0x0000000111d89cdb: movabs $0x10bfdc620,%rdi  ;   {external_word}
+  0x0000000111d89ce5: movabs $0x111d89c85,%rsi  ;   {internal_word}
+  0x0000000111d89cef: mov    %rsp,%rdx
+  0x0000000111d89cf2: and    $0xfffffffffffffff0,%rsp
+  0x0000000111d89cf6: callq  0x000000010be05bee  ;   {runtime_call}
+  0x0000000111d89cfb: hlt
+[Deopt Handler Code]
+  0x0000000111d89cfc: movabs $0x111d89cfc,%r10  ;   {section_word}
+  0x0000000111d89d06: push   %r10
+  0x0000000111d89d08: jmpq   0x0000000111cd0500  ;   {runtime_call}
+  0x0000000111d89d0d: hlt
+  0x0000000111d89d0e: hlt
+  0x0000000111d89d0f: hlt
+     93    2       1       eicher.jit.FloatMult::mult (4 bytes)
+Decoding compiled method 0x0000000111d8c950:
+Code:
+[Entry Point]
+[Verified Entry Point]
+[Constants]
+  # {method} {0x000000010e74b3b8} 'mult' '(FF)F' in 'eicher/jit/FloatMult'
+  # parm0:    xmm0      = float
+  # parm1:    xmm1      = float
+  #           [sp+0x40]  (sp of caller)
+  0x0000000111d8caa0: mov    %eax,-0x14000(%rsp)
+  0x0000000111d8caa7: push   %rbp
+  0x0000000111d8caa8: sub    $0x30,%rsp         ;*fload_0
+                                                ; - eicher.jit.FloatMult::mult@0 (line 17)
+
+  0x0000000111d8caac: vmulss %xmm1,%xmm0,%xmm0
+  0x0000000111d8cab0: add    $0x30,%rsp
+  0x0000000111d8cab4: pop    %rbp
+  0x0000000111d8cab5: test   %eax,-0x73b39bb(%rip)        # 0x000000010a9d9100
+                                                ;   {poll_return}
+  0x0000000111d8cabb: retq
+  0x0000000111d8cabc: nop
+  0x0000000111d8cabd: nop
+  0x0000000111d8cabe: mov    0x2a8(%r15),%rax
+  0x0000000111d8cac5: movabs $0x0,%r10
+  0x0000000111d8cacf: mov    %r10,0x2a8(%r15)
+  0x0000000111d8cad6: movabs $0x0,%r10
+  0x0000000111d8cae0: mov    %r10,0x2b0(%r15)
+  0x0000000111d8cae7: add    $0x30,%rsp
+  0x0000000111d8caeb: pop    %rbp
+  0x0000000111d8caec: jmpq   0x0000000111cf56e0  ;   {runtime_call}
+  0x0000000111d8caf1: hlt
+  0x0000000111d8caf2: hlt
+  0x0000000111d8caf3: hlt
+  0x0000000111d8caf4: hlt
+  0x0000000111d8caf5: hlt
+  0x0000000111d8caf6: hlt
+  0x0000000111d8caf7: hlt
+  0x0000000111d8caf8: hlt
+  0x0000000111d8caf9: hlt
+  0x0000000111d8cafa: hlt
+  0x0000000111d8cafb: hlt
+  0x0000000111d8cafc: hlt
+  0x0000000111d8cafd: hlt
+  0x0000000111d8cafe: hlt
+  0x0000000111d8caff: hlt
+[Exception Handler]
+[Stub Code]
+  0x0000000111d8cb00: callq  0x0000000111d84b20  ;   {no_reloc}
+  0x0000000111d8cb05: mov    %rsp,-0x28(%rsp)
+  0x0000000111d8cb0a: sub    $0x80,%rsp
+  0x0000000111d8cb11: mov    %rax,0x78(%rsp)
+  0x0000000111d8cb16: mov    %rcx,0x70(%rsp)
+  0x0000000111d8cb1b: mov    %rdx,0x68(%rsp)
+  0x0000000111d8cb20: mov    %rbx,0x60(%rsp)
+  0x0000000111d8cb25: mov    %rbp,0x50(%rsp)
+  0x0000000111d8cb2a: mov    %rsi,0x48(%rsp)
+  0x0000000111d8cb2f: mov    %rdi,0x40(%rsp)
+  0x0000000111d8cb34: mov    %r8,0x38(%rsp)
+  0x0000000111d8cb39: mov    %r9,0x30(%rsp)
+  0x0000000111d8cb3e: mov    %r10,0x28(%rsp)
+  0x0000000111d8cb43: mov    %r11,0x20(%rsp)
+  0x0000000111d8cb48: mov    %r12,0x18(%rsp)
+  0x0000000111d8cb4d: mov    %r13,0x10(%rsp)
+  0x0000000111d8cb52: mov    %r14,0x8(%rsp)
+  0x0000000111d8cb57: mov    %r15,(%rsp)
+  0x0000000111d8cb5b: movabs $0x10bfdc620,%rdi  ;   {external_word}
+  0x0000000111d8cb65: movabs $0x111d8cb05,%rsi  ;   {internal_word}
+  0x0000000111d8cb6f: mov    %rsp,%rdx
+  0x0000000111d8cb72: and    $0xfffffffffffffff0,%rsp
+  0x0000000111d8cb76: callq  0x000000010be05bee  ;   {runtime_call}
+  0x0000000111d8cb7b: hlt
+[Deopt Handler Code]
+  0x0000000111d8cb7c: movabs $0x111d8cb7c,%r10  ;   {section_word}
+  0x0000000111d8cb86: push   %r10
+  0x0000000111d8cb88: jmpq   0x0000000111cd0500  ;   {runtime_call}
+  0x0000000111d8cb8d: hlt
+  0x0000000111d8cb8e: hlt
+  0x0000000111d8cb8f: hlt
+     94    1       3       eicher.jit.FloatMult::mult (4 bytes)   made not entrant
+
+Process finished with exit code 0
